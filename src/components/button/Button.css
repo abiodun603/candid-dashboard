@@ -1,0 +1,54 @@
+
+
+.btn{
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 28px;
+    transition: transform 0.3s ease;
+    height: 50px;
+    width: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Button Colos and Styles */
+.btn--primary--solid{
+    background-color: var(--kBlue);
+    color: var(--kWhite);
+    border: none;
+}
+
+.btn--primary--outline{
+    background-color: transparent;
+    border: 2px solid var(--primary);
+}
+
+.btn--orange--solid{
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+}
+.btn--orange--primary{
+    background-color: var(--orange);
+    color: var(--primary);
+    border: none;
+}
+
+.btn--orange--outline{
+    background-color: transparent;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+}   
+
+/* Button Sizes */
+.btn--medium{
+    font-size: 16px;
+}
+
+.btn--small{
+    padding: 15px 30px;
+    font-size: 20px;
+}

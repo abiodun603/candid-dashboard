@@ -1,0 +1,23 @@
+.action {
+    padding: 6px 11px;
+    color: var(--txt-white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.action-warning {
+    background-color: var(--main-color-warning);
+}
+
+.action-edit {
+    background-color: #EF7C24;
+}
+
+.action-view {
+    background-color: #6CC15A;
+}

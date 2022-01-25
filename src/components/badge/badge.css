@@ -1,0 +1,16 @@
+.badge {
+    padding: 6px 11px;
+    color: var(--txt-white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.badge-warning {
+    background-color: var(--main-color-warning);
+}
+
+/* 
+  =========== Note you can defined as may color you want 
+.badge-primary {
+    background-color: var(--main-color-waring);
+} */

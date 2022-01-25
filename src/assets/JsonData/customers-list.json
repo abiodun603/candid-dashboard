@@ -1,0 +1,20 @@
+[
+    {"id":1, "name": "s & s hotel","location": "ikotun","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":4 ,"amount":"120,000.00"},
+    {"id":2, "name": "ore close","location": "idumu","address": "surulere nationim stadius","custodian": "Mr Bamidele", "mobile": "09124247431", "guard":10 ,"amount":"120,000.00"},
+    {"id":3, "name": "tiyani  lodge","location": "agodo","address": "surulere nationim stadius","custodian": "Mr ayomide", "mobile": "09124247431", "guard":2 ,"amount":"120,000.00"},
+    {"id":4, "name": "bidmid cosmetics","location": "cele","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":1 ,"amount":"120,000.00"},
+    {"id":5, "name": "ameedat residence","location": "okota","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":2 ,"amount":"120,000.00"},
+    {"id":6, "name": "ft mortages, gerrard","location": "surulere","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":6 ,"amount":"120,000.00"},
+    {"id":7, "name": "springville","location": "abuja","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":2 ,"amount":"20,000.00"},
+    {"id":8, "name": "tah ribadu","location": "banana island","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":14 ,"amount":"120,000.00"},
+    {"id":9, "name": "medical road","location": "cms","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":24 ,"amount":"120,000.00"},
+    {"id":10, "name": "tah bababa island","location": "mushin","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":11 ,"amount":"120,000.00"},
+    {"id":11, "name": "ps okota","location": "barrack","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":4 ,"amount":"120,000.00"},
+    {"id":12, "name": "jfhouse","location": "eko hotel","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":9 ,"amount":"120,000.00"},
+    {"id":13, "name": "davids glow auto","location": "elasa","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":7 ,"amount":"120,000.00"},
+    {"id":14, "name": "tah bank road","location": "jakande","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":2 ,"amount":"120,000.00"},
+    {"id":15, "name": "Tah ikate","location": "estate","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":1 ,"amount":"120,000.00"},
+    {"id":16, "name": "folword supermkt","location": "nnpc","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":6 ,"amount":"120,000.00"},
+    {"id":17, "name": "fine & country","location": "orioke","address": "surulere nationim stadius","custodian": "Mr adenekan", "mobile": "09124247431", "guard":13 ,"amount":"120,000.00"}
+
+]       

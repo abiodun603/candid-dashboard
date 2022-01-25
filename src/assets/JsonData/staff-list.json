@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Akinyemi Adeyele",
+        "position": "General Manager"
+    },
+    {
+        "id": 2,
+        "name": "Mr Tayo",
+        "position": "Admin"
+    },
+    {
+        "id": 3,
+        "name": "Miss Teniola",
+        "position": "Control Room"
+    },
+    {
+        "id": 4,
+        "name": "Mrs Lukeman",
+        "position": "Accountants"
+    },
+    {
+        "id": 5,
+        "name": "Mrs Deola",
+        "position": "Receptionist"
+    },
+    {
+        "id": 6,
+        "name": "Mr Fayose",
+        "position": "Operation"
+    },
+    {
+        "id": 8,
+        "name": "Mrs Anthony",
+        "position": "Operation"
+    },
+    {
+        "id": 9,
+        "name": "Mrs Chiwe",
+        "position": "Cleaner"
+    }
+]

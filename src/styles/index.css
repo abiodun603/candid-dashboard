@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --kWhite: #FFFFFF;
+    --kBlack : #263253;
+    --kBlue: #09185E;
+    --kBlueSec: #253da7;
+    --kLightGrey: #f7f9fc;
+    --font-family: 'Poppins' , sans-serif;
+    --font-normal : 1rem;
+
+    /* colors */
+    --main-bg: #FFFFFF;
+    --second-bg: #FAFAFB;
+    --txt-color: #455560;
+    --txt-white: #FFF;
+    --second-color: #62b4ff;
+
+    --main-color-warning: red;
+
+
+    --sidebar-width: 18.75rem; /* 300 px*/
+    --border-radius: 15px;
+    --topnav-height: 6.88rem;
+    --transition-cubic : cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --box-shadow: rgba(149, 157,165,.2) 0px 8px 24px;
+    /* Margin */
+    --mb-2 : 1.5rem;
+}
+
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+ }
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: greyscale; 
+    /* letter-spacing: .8px; */
+
+}
+  
+h1, h2, h3, p{
+    margin: 0;
+    padding: 0;
+}
+  
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+  
+a{
+    text-decoration: none;
+    color: unset
+}
+
+a:hover {
+    color: var(--kBlue);
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    color: var(--txt-color)
+}
+
+input {
+    border: 2px solid transparent;
+    outline: 0;
+}
+
+input:focus {
+    border: 2px solid var(--kBlue)
+}
+
+/* .radioButton{
+    border: 1px solid red !important;
+    background-color: red !important;
+} */
