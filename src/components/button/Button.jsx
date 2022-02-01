@@ -14,7 +14,7 @@ function Button({children, type, onClick, buttonStyle, buttonSize}) {
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
 
     return (
-        <button onclick={onClick} type={type} className={`btn ${checkButtonStyle} ${checkButtonSize}`} >
+        <button onClick={onClick} type={type} className={`btn ${checkButtonStyle} ${checkButtonSize}`} >
             {children}
         </button>
     )

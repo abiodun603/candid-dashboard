@@ -13,6 +13,8 @@ const curr_user = {
     image: user_image
 }
 
+// useContext
+
 const renderUserToggle = (user) => (
     <TopNavRightUser>
         <TopNavRightUserImage>

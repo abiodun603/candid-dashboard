@@ -3,31 +3,28 @@ import React, {useState} from 'react'
 import "./table.css"
 
 const Table = props => {
-    const initDataShow = props.limit ? props.bodyData.slice(0, Number(props.limit)):
-                        props.bodyData
+    // const initDataShow = props.limit ? props.bodyData.slice(0, Number(props.limit)):props.bodyData
+    // const [dataShow, setDataShow] = useState(initDataShow)
+    
 
-    const [dataShow, setDataShow] = useState(initDataShow)
+    // let pages = 1
+    // let range =  []
+    // if(props.limit !== undefined){
+    //     let page = Math.floor(props.bodyData.length / Number(props.limit))
+    //     pages = props.bodyData.lenth % Number(props.limit) === 0 ? page : page + 1
+    //     range = [...Array(pages).keys()]
+    // }
 
-    let pages = 1
-    let range = []
-    if(props.limit !== undefined){
-        let page = Math.floor(props.bodyData.length / Number(props.limit))
-        pages = props.bodyData.lenth % Number(props.limit) === 0 ? page : page + 1
-        range = [...Array(pages).keys()]
-    }
+    // const [currPage, setCurrPage] = useState(0);
 
-    const [currPage, setCurrPage] = useState(0);
+    // const selectPage = page => {
+    //     const start = Number(props.limit) * page
+    //     const end = start + Number(props.limit)
 
-    const selectPage = page => {
-        const start = Number(props.limit) * page
-        const end = start + Number(props.limit)
-
-        setDataShow(props.bodyData.slice(start, end))
-
-        setCurrPage(page)
-    }
+    //     setDataShow(props.bodyData.slice(start, end))
+    //     setCurrPage(page)
+    // }
     return (
-
         <>
             <div className = "table-wrapper">
                 <table>
@@ -40,19 +37,19 @@ const Table = props => {
                                     }
                                 </tr>
                             </thead>
-                        ) : null
+                        ) : ""
                     }
                     {
                         props.bodyData && props.renderBody ? (
                             <tbody>
                                 {
-                                    dataShow.map((item, index) => props.renderBody(item, index))
+                                    props.bodyData.map((item, index) => props.renderBody(item, index))
                                 }
                             </tbody>
                         ) : null
                     }
                 </table>
-                {
+                {/* {
                     pages > 1 ? (
                         <div className="table__pagination"> 
                             {
@@ -64,7 +61,7 @@ const Table = props => {
                             }
                         </div>
                     ) : null
-                }
+                } */}
             </div>
         </>
     )

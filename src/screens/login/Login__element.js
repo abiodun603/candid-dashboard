@@ -32,6 +32,13 @@ export const FormWrapper = styled.form `
     height: 100%;
 `
 
+export const FormWrapper2 = styled.form `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+`
+
 export const LoginForm = styled.div `
     width:65%;
 

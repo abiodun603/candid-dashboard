@@ -237,7 +237,7 @@ const Guards = () => {
                 onClose={handleClickClose}
                 title={"New Guard Entry"}
             >   
-            <CameraShot/>
+            {/* <CameraShot/> */}
             </AlertDialog>
         </>
     );

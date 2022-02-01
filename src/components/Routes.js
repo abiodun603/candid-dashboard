@@ -10,8 +10,8 @@ function DRoutes() {
         <Switch>
             <Route path="/" exact component = {Dashboard}/>
             <Route path ="/customers" component = {Customers}/>
-            <Route path ="/guards" component = {ShowGuardData}/>
-            <Route path ="/viewGuard" component = {Guards}/>
+            <Route path ="/guards" component = {Guards}/>
+            <Route path ="/viewGuard" component = {ShowGuardData}/>
             <Route path = "/staff" component = {Staff} />
         </Switch>
     )

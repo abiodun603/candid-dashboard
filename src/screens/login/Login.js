@@ -1,69 +1,32 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 // import useAuth from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 import {LoginBanner, LoginForm, LoginWrapper,FormWrapper, FromBx, Input, FromBxRem, InputCheck, Button} from './Login__element'
 import axios from "axios"
-import {AuthContext} from "../../App"
+
+// import {AuthContext} from "../../App"
+
+// new CONFIGUARATION
+import { login } from "../../context/authContext/apiCalls"
+import {AuthContext} from "../../context/authContext/AuthContext"
 const Signin = () => {
-    const {dispatch} =  React.useContext(AuthContext)
+    // const {dispatch} =  React.useContext(AuthContext)
     const [values, handleChange] = useForm({
         email : "",
         password: ""
     });
     const [roleId, setRoleId] = useState(1);
 
-    const [token, setToken] = useState("")
-
-    // const {registerLogin, error} = useAuth();
-
-    const handleLogin = async (e) => {
+    // New CONFIGURATION
+    const {user, isFetching, dispatch} = useContext(AuthContext);
+    console.log(isFetching)
+    const handleLogin = (e) => {
         e.preventDefault();
-        console.log(values);
-        // await registerLogin(values);
-
-        //  fetch("https://candid-nest.herokuapp.com/auth/login", {
-        //     method: "post",
-        //     mode: "no-cors",
-        //     body: JSON.stringify({
-        //         email: values.email,
-        //         password: values.password,
-        //         roleId: 1
-        //     })
-        //  }).then(data => {
-        //      if(res.ok) {
-        //          return res.json();
-        //     }
-        //     throw res; 
-        //  }).then(DataTransferItemList => {
-        //      console.log("you can logged IN")
-        //     dispatch({
-        //         type: "LOGIN",
-        //         payload: data
-        //     })
-        //  })
-        //  .catch(err => {
-        //     console.log(err)
-        //  })
-        await axios({
-            method: "post",
-            url: "https://candid-nest.herokuapp.com/auth/login",
-            data: {
-                email: values.email,
-                password: values.password,
-                roleId: 1
-            }
-        }).then(res => {
-            dispatch({
-                type: "LOGIN",
-                payload: res.data
-            })
-                throw res; 
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        console.log(values)
+        const email = values.email
+        const password = values.password
+        login({email, password, roleId}, dispatch);
     }
-
     
     return (
         <>
@@ -101,7 +64,11 @@ const Signin = () => {
                         </FromBxRem>
 
                         <FromBx>
-                            <Button type="submit">Login</Button>
+                            <Button type="submit" disabled = {isFetching}>
+                                {!isFetching ? (
+                                    "Login"
+                                ): "mnmnmn"}
+                            </Button>
                         </FromBx>
                     </LoginForm>
                 </FormWrapper>
