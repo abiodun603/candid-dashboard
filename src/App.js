@@ -17,9 +17,12 @@ function App() {
       {/* New AuthProvidr */}
       <Router>
         <Switch>
-          <Route exact path="/">{ user? <Layout/> : <Redirect to="/login" />}</Route>
+          {/* <Route exact path="/">{ user? <Layout/> : <Redirect to="/login" />}</Route> */}
           <Route path = "/login">
             {!user ? <Signin/> : <Redirect to="/" />}
+          </Route>
+          <Route path = "/patrol">
+            {user ? <Patrol/> : <Redirect to="/login" />}
           </Route>
           <Route exact element = "/guards-form">
             <Guards/>
