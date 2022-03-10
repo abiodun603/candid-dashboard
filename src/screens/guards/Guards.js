@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useReducer } from 'react'
+import React, { useState, useEffect, useReducer, useContext } from 'react'
 import guardsList from "../../assets/JsonData/guards-list"
 import ActionButton from '../../components/action-button/ActionButton'
 import Table from "../../components/table/Table"
@@ -26,6 +26,8 @@ import axios from "axios"
 // React Web Cam Lib
 import Webcam from "react-webcam";
 import { initialState, reduce } from '../../hooks/GetGuard_Reduce'
+import { createGuard } from '../../context/guardContext/apiCalls'
+import { GuardContext } from '../../context/guardContext/GuardContext'
 
 
 
@@ -56,12 +58,13 @@ const videoConstraints = {
 const Guards = () => {
     const [open, setOpen] = useState(false);
     const [guardLists, setGuardLists] = useState([]);
-
+    const [image,setImage]=useState('');
     const webcamRef = React.useRef(null);
-
     // react user form hook lib
-    const { register, handleSubmit } = useForm({});
-    const [state, dispatch] = useReducer(reduce, initialState)  
+    const { register, handleSubmit } = useForm({ shouldUseNativeValidation: true });
+    // const [state, dispatch] = useReducer(reduce, initialState)  
+    
+    const {dispatch} = useContext(GuardContext)
 
     /*** Alert Dialog ***/
     const handleClickClose = () => {
@@ -71,37 +74,64 @@ const Guards = () => {
         setOpen(true);
     }
 
-    const [image,setImage]=useState('');
-
     // WebCam OnCapture
     const capture = React.useCallback(
         () => {
-            const imageSrc = webcamRef.current.getScreenshot();
+            // const imageSrc = webcamRef.current.getScreenshot();
+						const imageSrc = webcamRef.current;
             setImage(imageSrc)
         },
         [webcamRef]
     );
-
-    /***********  ***********/
-    const handleImage = (event) => {
-        // setuserInfo({
-        //     ...userInfo,
-        //     file:event.target.file[0],
-        // });
+		console.log(image);
+    // pass image as object
+    const captureImage = {
+        image: image
     }
 
-    const onSubmit = (data, obj) => {
-        console.log(data, obj);
-        // alert(JSON.stringify(data));
-        // console.log(guard_name);
+    // console.log(captureImage);
+
+    const onSubmit = async (data, cam) => { 
         const formData = new FormData();
+				formData.append('image', data.image)
 
-        console.log(image)
+				formData.append('signature', data.picture);
+        formData.append('surname', data.guard_name)
+        formData.append('otherName', data.other_name)
+        formData.append('email', data.email);
+        formData.append('dob', data.date);
+        formData.append('age', data.age);
+        formData.append('phoneNo', data.guard_mobile)
+        formData.append("bloodGroup", data.blood);
+        formData.append("address", data.address);
+        formData.append("sex", "male");
+        formData.append('religion', data.religion);
+        formData.append('maritalStatus', data.marital);
+        formData.append('wifeName', data.wife);
+        formData.append('wifePhoneNumber', data.wife_phone);
+        formData.append('nextOfKin', data.kin);
+        formData.append('nextOfKinPhoneNumber', data.kin_phone);
+        formData.append('eduQualification', data.education);
+        formData.append('previousEmployer', data.previous_emp);
+        formData.append('previousEmployerAddress', data.pre_emp_address);
+        formData.append('resignationReason', data.reason);
+        formData.append('medicalCondition', data.medical);
+        formData.append('fatherName', data.father);
+        formData.append('fatherNameAddress', data.father_address);
+        formData.append('fatherNamePhoneNumber', data.father_phone);
+        formData.append('motherName', data.father);
+        formData.append('motherNameAddress', data.father_address);
+        formData.append('motherNamePhoneNumber', data.father_phone);
+        formData.append('bodyMark', data.guard_mark);
+        formData.append('bodyMarkPart', data.mark_specify);
+        formData.append('society', data.society);
+        // specify society field is not specify
+        formData.append('vetStatus', 1);
+        
+        // console.log(data)
+        createGuard(formData, dispatch);
 
-        formData.append('guard', data);
     };
-
-    const webcam = {image : image};
 
     const token = localStorage.getItem("token");
     // console.log(token);
@@ -111,8 +141,9 @@ const Guards = () => {
         console.log(token)
         axios.get('https://candid-nest.herokuapp.com/guards',
             {
-                headers: {'Authorization': `Bearer ${token}`}
-            }
+							headers: {
+								"Authorization": "Bearer " + JSON.parse(localStorage.getItem("user")).access_token
+						}            }
         ).then(response => {  
                 // console.log(response.data)
                 setGuardLists(response.data)
@@ -183,7 +214,7 @@ const Guards = () => {
               onClose={handleClickClose}
               title={"New Guard Entry"}
             >
-                <FormWrapper2 onSubmit={handleSubmit(data => onSubmit(data, webcam))}>
+                <FormWrapper2 onSubmit={handleSubmit(data => onSubmit(data, captureImage))}>
                     <DialogContent>
                         <FromBx>
                             <span>Full Name</span>
@@ -198,9 +229,22 @@ const Guards = () => {
                             />
                         </FromBx>
                         <FromBx>
+                            <span>Email Address</span>
+                            <Input type = "text" placeholder = "Enter Email Address" 
+                                   {...register("email")} 
+                            />
+                        </FromBx>
+                        <FromBx>
                             <span>Date of Birth</span>
                             <input type="date" 
                               {...register("date")} 
+
+                            />
+                        </FromBx>
+                        <FromBx>
+                            <span>Age</span>
+                            <Input type="text" placeholder = "Enter Guard Age"
+                              {...register("age")} 
 
                             />
                         </FromBx>
@@ -292,7 +336,7 @@ const Guards = () => {
                         <FromBx>
                             <span>Address</span>
                             <Input type = "text" placeholder = "Enter Address"
-                               {...register("address")} 
+                               {...register("pre_emp_address")} 
                             />
                         </FromBx>
                         <FromBx>
@@ -346,7 +390,7 @@ const Guards = () => {
                         <FromBx>
                             <span>Mark On The Body</span>
                             <Input type = "text" placeholder = "Enter Yes or No" 
-                               {...register("guards_mark")} 
+                               {...register("guard_mark")} 
                             />
                         </FromBx>
                         <FromBx>
@@ -373,8 +417,13 @@ const Guards = () => {
                             <input type="file" {...register("picture")}/>
                         </FromBx>
 
+												<FromBx>
+                            <span>Capture Signature</span>
+                            <input type="file" {...register("image")}/>
+                        </FromBx>
+
                         {/* WebCamera */}
-                        {
+                        {/* {
                             image == "" ? <Webcam
                                 audio={false}
                                 height = {"100%"}
@@ -397,14 +446,14 @@ const Guards = () => {
                                 </button> :
                                 <button 
                                     type = "submit"
-                                    onClick={(e)=>{e.preventDefault();capture();handleSubmit(onSubmit);}}
+                                    onClick={(e)=>{e.preventDefault();capture();}}
                                     className="webcam-btn"
                                     // {...register({image})}
                                 >
                                     Capture
                                 </button>
                             }
-                        </div>
+                        </div> */}
 
                     </DialogContent>
                     <DialogActions>

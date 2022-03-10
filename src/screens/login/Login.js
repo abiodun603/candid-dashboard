@@ -64,10 +64,10 @@ const Signin = () => {
                         </FromBxRem>
 
                         <FromBx>
-                            <Button type="submit" disabled = {isFetching}>
-                                {!isFetching ? (
-                                    "Login"
-                                ): "mnmnmn"}
+                            <Button type="submit">
+                                {isFetching ? (
+                                    "mnmnmn"
+                                ): "Login"}
                             </Button>
                         </FromBx>
                     </LoginForm>

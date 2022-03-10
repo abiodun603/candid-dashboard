@@ -1,9 +1,8 @@
 import axios from "axios"
 import { loginFailure, loginStart, loginSuccess} from "./AuthActions"
 
-export const login = async(user, dispatch) => {
+export const login = async (user, dispatch) => {
     dispatch(loginStart);
-    // console.log(show)
     try {
         const res = await axios({
                 method: "post",
@@ -13,10 +12,12 @@ export const login = async(user, dispatch) => {
                     password: user.password,
                     roleId: user.roleId
                 }
+            }).then((response) => {
+                console.log(response)
+                dispatch(loginSuccess(response.data));
             })
-            console.log(user)
+            // console.log(user)
             // console.log(res.data)
-        dispatch(loginSuccess(res.data));
     }catch(err){
         dispatch(loginFailure)
     }

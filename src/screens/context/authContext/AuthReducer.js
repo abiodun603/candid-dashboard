@@ -1,26 +1,19 @@
-const initialState = {
-    loading : false,
-    user: [],
-    error: false
-}
-
-const AuthReducer = (state = initialState, action) => {
+const AuthReducer = (state, action) => {
     switch(action.type){
         case "LOGIN_START": 
             return {
-                ...state,
+                user: null,
                 isFetching: true,
                 error: false
             };
         case "LOGIN_SUCCESS":
             return {
-                ...state,
                 user : action.payload,
-                isFetching: false,
+                isFetching: true,
+                error: false
             };
         case "LOGIN_FAILURE":
             return {
-                ...state,
                 user: null,
                 isFetching: false,
                 error: true
@@ -32,7 +25,7 @@ const AuthReducer = (state = initialState, action) => {
                 error: false
             }
         default: 
-            return state;
+            return {...state};
     }
 }
 

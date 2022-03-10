@@ -21,6 +21,14 @@ export const LoginBanner = styled.div `
         height:100%;
         object-fit: cover;
     }
+
+    @media screen and (max-width: 768px){
+        width: 20%;
+    }
+
+    @media screen and (max-width: 368px){
+        display: none;
+    }
 `
 
 export const FormWrapper = styled.form `
@@ -30,30 +38,55 @@ export const FormWrapper = styled.form `
     flex-direction: column; 
     width: 50%;
     height: 100%;
+
+    @media screen and (max-width: 768px){
+        width: 100%;
+    }
+
 `
 
 export const FormWrapper2 = styled.form `
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     flex-direction: column; 
+
+    span{
+        // line-height: 36px;
+        // font-size: 1rem;
+        // display: inline-block; 
+        // letter-spacing: 1px;
+        // font-size: 300;
+
+        line-height: 36px;
+        font-size: 1rem;
+        display: inline-block; 
+        letter-spacing: 1px;
+        font-weight: 600;
+
+    }
 `
 
 export const LoginForm = styled.div `
-    width:65%;
+	width:65%;
 
-    h2{
-        text-align: left !important;
-        margin-bottom: var(--mb-2);
-        &:after{
-            content: "";
-            display: block;
-            width: 75px;
-            height: 5px;
-            background: var(--kBlue);
-            margin-top: 5px;
-        }
-    }
+	h2{
+		text-align: left !important;
+		margin-bottom: var(--mb-2);
+		&:after{
+			content: "";
+			display: block;
+			width: 75px;
+			height: 5px;
+			background: var(--kBlue);
+			margin-top: 5px;
+		}
+	}
+
+	@media screen and (max-width: 768px){
+		width: 100%;
+		padding: 0 2rem
+	}
 `
 
 export const FromBx = styled.div `
@@ -65,11 +98,18 @@ export const FromBx = styled.div `
 
 
     span{
+        // line-height: 36px;
+        // font-size: 1rem;
+        // display: inline-block; 
+        // letter-spacing: 1px;
+        // font-size: 300;
+
         line-height: 36px;
         font-size: 1rem;
         display: inline-block; 
         letter-spacing: 1px;
-        font-size: 300;
+        font-weight: 500;
+
     }
 
     label{
@@ -80,15 +120,46 @@ export const Input = styled.input.attrs(props => ({
     type: 'text',
 
 })) `
+    // width: 100%;
+    // border-radius: 10px;
+    // padding: 10px 20px;
+    // background: var(--kLightGrey);
+    // border: 2px solid #D0D0D0;
+    // outline: none;
+    // font-weight: 400;
+    // letter-spacing: 1px;
+    // background: transparent;
+
     width: 100%;
-    border-radius: 10px;
-    padding: 10px 20px;
-    background: var(--kLightGrey);
-    border: 2px solid #D0D0D0;
+    border-radius: 4px;
+    padding: 15px 20px;
     outline: none;
     font-weight: 400;
     letter-spacing: 1px;
-    background: transparent;
+    background: #f5f6fa;
+`
+
+export const InputDate = styled.input.attrs(props => ({
+    type: 'date',
+
+})) `
+    // width: 100%;
+    // border-radius: 10px;
+    // padding: 10px 20px;
+    // background: var(--kLightGrey);
+    // border: 2px solid #D0D0D0;
+    // outline: none;
+    // font-weight: 400;
+    // letter-spacing: 1px;
+    // background: transparent;
+
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px 20px;
+    outline: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background: #f5f6fa;
 `
 
 export const InputCheck = styled.input.attrs(props => ({
