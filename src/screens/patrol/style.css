@@ -1,13 +1,15 @@
 body{
     background-color: #ede7f6;
     box-sizing: border-box;
-    /* font-family: Roboto, sans-serif; */
 }
 .form{
     height: 100vh;
     max-width: 100%;
-    width: 600px;
-    margin: auto;
+    width: 100%;
+    /* margin: auto; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .required{
     font-size: 13px;
@@ -16,10 +18,9 @@ body{
 .form-title{
     height: 150px;
     max-width: 100% !important;
-    width: 100% !important;
+    width: 600px !important;
     background-color: #FDFEFE;
-    /* margin: 15px; */
-    margin: auto 15px;
+    /* margin: auto 15px; */
     border-radius: 8px;
     border-top: 8px solid #6703c4;
     padding: 25px;
@@ -29,7 +30,8 @@ body{
 .block {
     padding-top: 1.5rem;
     padding-bottom:1.5rem;
-    max-width: 600px;
+    max-width: 100%;
+    width: 600px;
     background-color: #FDFEFE;
     margin: 15px;
     border-radius: 8px;
@@ -79,7 +81,7 @@ input:focus{
 }
 
 .btn{
-    height: 36px;
+    height: 40px;
     width: 100px;
     background-color: #6703c4;
     border-radius: 5px;
@@ -88,18 +90,17 @@ input:focus{
     font-weight: 540;
     border: none;
     padding: 10px;
-    margin: 15px;
+    margin-top: 30px;
     color: white;
-    position: absolute;
+    /* position: absolute; */
     cursor: pointer;
 }
 .last-block> h2{
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30px;
     color: #a2a4a6;
     font-weight: 200;
     font-size: 18;
-    margin: 4rem 0;
 }
 .never{
     padding-left: 15px;
@@ -198,6 +199,10 @@ input[type="radio"]:hover + label::before {
         margin-top: .5rem;
         margin-bottom: .5rem
 
+    }
+
+    .form > .block{
+        margin: 15px 2rem 0 2rem !important;
     }
 
     input[type = "date"]{
