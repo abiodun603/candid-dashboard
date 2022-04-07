@@ -29,8 +29,80 @@ const Guards = () => {
                         <p>This is Candid Security form. Created by Candid Security Solutions</p>
                     <p class="required">*Required</p>
                 </div>
-                
+
+                {/* BEGINNING OF GUARANTOR */}
                 <div class="block">
+                    <div class="text"> Surname Name<span class="required">*</span></div>
+                    <div class="input-block"><input type="input" name="answer" placeholder="Enter Your Name"/></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Other Names<span class="required">*</span></div>
+                    <div class="input-block"><input type = "input" name="answer" placeholder = "Enter Other Name"/> </div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Telephone Numbers: <span class="required">*</span></div>
+                    <div class="input-block"><input type="email" name="answer" placeholder="Enter Your Email"/></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Residential Address<span class="required">*</span></div>
+                    <div class="input-block"> <input type="date" placeholder = "mm/dd/yy"/></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">SPOUSE Name<span class="required">*</span></div>
+                    <div class="input-block"> <input type="age" placeholder = "Enter Guard Age"/></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Date of Birth<span class="required">*</span></div>
+                    <div class="input-block"> <input type="date" placeholder = "Enter Local Government Area" /></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Age<span class="required">*</span></div>
+                    <div class="input-block"> <input type="number" placeholder = "Enter Your NIN Here" /></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Religion<span class="required">*</span></div>
+                    <div class="input-block"> <input type="text" placeholder = "Enter Your Service Number Here" /></div>
+                </div>
+            
+                <div class="block">
+                    <div class="text">Professional Occupation<span class="required">*</span></div>
+                    <div class="input-block"> <input type="text" placeholder = "Enter Blood Group" / ></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Office Name<span class="required">*</span></div>
+                    <div class="input-block"><input type="address" name="answer" placeholder="Enter Your Address"/></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Position Held<span class="required">*</span></div>
+                    <div class="input-block"><input type="address" name="answer"placeholder = "Enter State" /></div>
+                </div>
+            
+                <div class="block">
+                    <div class="text">Office Address<span class="required">*</span></div>
+                    <div class="input-block"><input type="text" name="answer" placeholder = "Enter Religion"/></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Office Phone Number<span class="required">*</span></div>
+                    <div class="input-block"><input type="text" name="answer" placeholder="Enter Marital Status" /></div>
+                </div>
+
+                <div class="block">
+                    <div class="text">Relationship To Applicant<span class="required">*</span></div>
+                    <div class="input-block"><input type="phone" name="answer" placeholder="Enter Number"/></div>
+                </div>                
+                {/* END OF GUARANTOR */}
+                
+                {/* <div class="block">
                     <div class="text">Name<span class="required">*</span></div>
                     <div class="input-block"><input type="input" name="answer" placeholder="Enter Your Name"/></div>
                 </div>
@@ -209,7 +281,7 @@ const Guards = () => {
                 <div class="block">
                     <div class="text">Capture Signature<span class="required">*</span></div>
                     <div class="input-block"><input type="file" accept="image/*" name="answer"/></div>
-                </div>
+                </div> */}
                 <div class= "block" style={{paddingLeft: 20}}>
                     {
                         image == "" ? <Webcam
